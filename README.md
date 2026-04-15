@@ -1,4 +1,7 @@
 # 🏥 Clínica ESP — Plataforma de Salud Holística
+
+![Banner Clínica ESP](./docs/banner.png)
+
 **React 18** · **Vite** · **Tailwind CSS** · **React Router**
 
 🌟 **¿Qué es este proyecto?**
@@ -43,12 +46,3 @@ El núcleo de la aplicación actual se encuentra en la carpeta `clinica-react`.
 
 ---
 **Desarrollado por Sebastian Vasquez Echavarria**
-
-<div align="center">
-
-## 📊 Actividad del Desarrollador
-
-<img src="https://github-readme-stats.vercel.app/api?username=sebastianvasquezechavarria1234&show_icons=true&title_color=00d084&icon_color=00d084&text_color=383838&bg_color=f0f7ff&border_color=00d084&border_radius=20&count_private=true&hide_border=false" alt="Estadísticas de Sebastian" />
-
-</div>
-

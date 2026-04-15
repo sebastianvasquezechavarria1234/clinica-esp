@@ -6,11 +6,8 @@ import Services from './pages/Services';
 import Blog from './pages/Blog';
 import Booking from './pages/Booking';
 import ScrollToTop from './components/ScrollToTop';
-import usePageTitle from './hooks/usePageTitle';
 
 function App() {
-  usePageTitle();
-
   return (
     <Router>
       <ScrollToTop />
