@@ -31,11 +31,11 @@ a, p{
     color: currentColor;
     font-weight: 500;
     font-family: "Urbanist", sans-serif;
-    text-decoration: none;
+    text-decoration: none !important;
 }
 
 ul {
-    list-style: none;
+    list-style: none !important;
     padding: 0;
     margin: 0;
 }
@@ -72,6 +72,7 @@ header{
     margin: 0 20px;
     width: calc(100% - 40px);
     box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.105);
+    background-color: white !important;
 }
 
 /* HEADER MENU SERVICIOS */
