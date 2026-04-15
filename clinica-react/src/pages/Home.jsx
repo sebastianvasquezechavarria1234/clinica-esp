@@ -15,6 +15,17 @@ import socio1 from '../assets/socio1.png';
 import socio2 from '../assets/socio2.webp';
 import socio3 from '../assets/socio3.png';
 import socio4 from '../assets/socio4.png';
+import useCountUp from '../hooks/useCountUp';
+
+const StatCard = ({ end, label }) => {
+    const count = useCountUp(end);
+    return (
+        <div>
+            <h1 className="text-[4rem] font-bold max-md:text-[1.5rem]">+{count.toLocaleString()}</h1>
+            <p>{label}</p>
+        </div>
+    );
+};
 
 const Home = () => {
   return (
@@ -72,13 +83,13 @@ const Home = () => {
 
       {/* NUMBERS */}
       <section className="number mt-[80px] max-w-[1330px] px-[100px] mx-auto flex items-center justify-between gap-[20px] text-center bg-green-50 p-[30px] rounded-[30px] max-lg:flex-col max-lg:px-[10px] max-lg:gap-[5px] max-lg:grid max-lg:grid-cols-2 max-sm:mt-[-50px] max-sm:p-[10px] max-sm:bg-transparent">
-        <div><h1 className="text-[4rem] font-bold max-md:text-[1.5rem]">+10.000</h1><p>Usuarios</p></div>
+        <StatCard end={10000} label="Usuarios" />
         <span className="w-[1px] h-[100px] bg-black max-lg:h-0 max-lg:absolute"></span>
-        <div><h1 className="text-[4rem] font-bold max-md:text-[1.5rem]">+6000</h1><p>Certificados</p></div>
+        <StatCard end={6000} label="Certificados" />
         <span className="w-[1px] h-[100px] bg-black max-lg:h-0 max-lg:absolute"></span>
-        <div><h1 className="text-[4rem] font-bold max-md:text-[1.5rem]">+5310</h1><p>Tramites</p></div>
+        <StatCard end={5310} label="Tramites" />
         <span className="w-[1px] h-[100px] bg-black max-lg:h-0 max-lg:absolute"></span>
-        <div><h1 className="text-[4rem] font-bold max-md:text-[1.5rem]">+505</h1><p>Cursos</p></div>
+        <StatCard end={505} label="Cursos" />
       </section>
 
       {/* WHY CHOOSE US */}
