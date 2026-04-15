@@ -1,20 +1,29 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Booking = () => {
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    date: ''
+  // Inicializar estado desde LocalStorage si existe
+  const [formData, setFormData] = useState(() => {
+    const savedData = localStorage.getItem('booking_draft');
+    return savedData ? JSON.parse(savedData) : {
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      date: ''
+    };
   });
 
   const [loading, setLoading] = useState(false);
 
+  // Guardar en LocalStorage cada vez que cambie el formulario
+  useEffect(() => {
+    localStorage.setItem('booking_draft', JSON.stringify(formData));
+  }, [formData]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Basic validation
+    // Validaciones lógicas
     if (!formData.email.includes('@')) {
       alert('Por favor, ingrese un correo electrónico válido.');
       return;
@@ -27,11 +36,15 @@ const Booking = () => {
 
     setLoading(true);
     
-    // Simulate API call
+    // Simulación de envío a API
     setTimeout(() => {
       setLoading(false);
       alert(`¡Muchas gracias ${formData.firstName}! Su cita para el ${formData.date} ha sido reservada con éxito.`);
-      setFormData({ firstName: '', lastName: '', email: '', phone: '', date: '' });
+      
+      // Limpiar formulario y almacenamiento
+      const emptyState = { firstName: '', lastName: '', email: '', phone: '', date: '' };
+      setFormData(emptyState);
+      localStorage.removeItem('booking_draft');
     }, 1500);
   };
 
@@ -54,8 +67,6 @@ const Booking = () => {
           className="w-full py-[14px] px-[25px] border border-gray-200 rounded-md mb-[20px] max-sm:text-[12px] max-sm:py-[8px] max-sm:px-[14px] max-sm:mb-[10px] outline-none focus:ring-2 focus:ring-green-400"
           type="text"
           required
-          maxLength="100"
-          minLength="3"
           placeholder="Ingrese sus nombres"
         />
         <input
@@ -65,8 +76,6 @@ const Booking = () => {
           className="w-full py-[14px] px-[25px] border border-gray-200 rounded-md mb-[20px] max-sm:text-[12px] max-sm:py-[8px] max-sm:px-[14px] max-sm:mb-[10px] outline-none focus:ring-2 focus:ring-green-400"
           type="text"
           required
-          maxLength="100"
-          minLength="3"
           placeholder="Ingrese sus Apellidos"
         />
       </div>
@@ -104,7 +113,7 @@ const Booking = () => {
       <div className="flex justify-start">
         <button
           disabled={loading}
-          className={`py-[10px] italic text-[19px] border-none px-[25px] bg-[#00d084] w-[200px] text-white rounded-md transition-all cursor-pointer max-sm:text-[12px] max-sm:py-[8px] max-sm:px-[13px] max-sm:w-[130px] ${loading ? 'opacity-50 grayscale' : 'hover:bg-green-600'}`}
+          className={`py-[10px] italic text-[19px] border-none px-[25px] bg-[#00d084] w-[200px] text-white rounded-md transition-all cursor-pointer max-sm:text-[12px] max-sm:py-[8px] max-sm:px-[13px] max-sm:w-[130px] ${loading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'}`}
           type="submit"
         >
           {loading ? 'Procesando...' : 'Reservar cita!'}
