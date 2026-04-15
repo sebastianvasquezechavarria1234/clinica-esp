@@ -48,6 +48,4 @@ El núcleo de la aplicación actual se encuentra en la carpeta `clinica-react`.
 
 <p align="left">
 <img src="https://github-readme-stats.vercel.app/api?username=sebastianvasquezechavarria1234&show_icons=true&theme=tokyonight" alt="Estadísticas de Sebastian" />
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=sebastianvasquezechavarria1234&theme=tokyonight" alt="Racha de Sebastian" />
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=sebastianvasquezechavarria1234&layout=compact&theme=tokyonight" alt="Lenguajes más usados" />
 </p>
