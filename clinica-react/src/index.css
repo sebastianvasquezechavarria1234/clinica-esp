@@ -26,7 +26,7 @@ h3{
     font-size: 28px;
 }
 
-a, p{
+a, p, a:hover, a:focus {
     font-size: 19px;
     color: currentColor;
     font-weight: 500;
@@ -34,8 +34,9 @@ a, p{
     text-decoration: none !important;
 }
 
-ul {
+ul, li {
     list-style: none !important;
+    list-style-type: none !important;
     padding: 0;
     margin: 0;
 }
