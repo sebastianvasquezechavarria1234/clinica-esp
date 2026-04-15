@@ -59,7 +59,10 @@ const Header = () => {
       </section>
 
       {/* HEADER */}
-      <header id="header" className="sticky top-[10px] z-40 px-[20px] duration-300 transition-all bg-white rounded-[15px]">
+      <header 
+        id="header" 
+        style={{ backgroundColor: 'white' }}
+        className="sticky top-[10px] z-40 px-[20px] duration-300 transition-all bg-white rounded-[15px]">
         <nav className="flex justify-between items-center">
           <ul className="flex">
             <li>
