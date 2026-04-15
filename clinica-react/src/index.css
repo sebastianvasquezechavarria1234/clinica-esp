@@ -26,12 +26,13 @@ h3{
     font-size: 28px;
 }
 
-a, p, a:hover, a:focus {
+a, p, span, button, a:hover, a:focus, button:hover {
     font-size: 19px;
     color: currentColor;
     font-weight: 500;
     font-family: "Urbanist", sans-serif;
     text-decoration: none !important;
+    outline: none !important;
 }
 
 ul, li {
